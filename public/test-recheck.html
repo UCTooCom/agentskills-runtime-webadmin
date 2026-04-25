@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试重新检测按钮</title>
+    <link rel="stylesheet" href="install.css">
+</head>
+<body>
+    <div id="app">
+        <h2>测试重新检测按钮功能</h2>
+        
+        <div class="check-item" id="check-nodejs">
+            <div class="check-header">
+                <span class="name">Node.js</span>
+                <span class="status pending">检测中...</span>
+            </div>
+            <div class="check-details">
+                <span class="current">当前版本: -</span>
+                <span class="required">要求: >= 18.0.0</span>
+            </div>
+        </div>
+
+        <div class="check-item" id="check-postgresql">
+            <div class="check-header">
+                <span class="name">PostgreSQL</span>
+                <span class="status pending">检测中...</span>
+            </div>
+            <div class="check-details">
+                <span class="current">当前版本: -</span>
+                <span class="required">要求: >= 14.0</span>
+            </div>
+        </div>
+
+        <div class="check-item" id="check-redis">
+            <div class="check-header">
+                <span class="name">Redis</span>
+                <span class="status pending">检测中...</span>
+            </div>
+            <div class="check-details">
+                <span class="current">当前版本: -</span>
+                <span class="required">要求: >= 6.0 (可选)</span>
+            </div>
+        </div>
+
+        <div class="check-item" id="check-ports">
+            <div class="check-header">
+                <span class="name">端口检测</span>
+                <span class="status pending">检测中...</span>
+            </div>
+            <div class="check-details">
+                <span class="current">检测端口: 3000, 3031, 6379</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <button id="recheck-btn" class="btn-primary">重新检测</button>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <h3>测试说明：</h3>
+            <ol>
+                <li>点击"重新检测"按钮</li>
+                <li>按钮应该变为"检测中..."并禁用</li>
+                <li>所有检测项应该显示"检测中..."状态</li>
+                <li>检测完成后，按钮恢复，状态更新</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // 模拟环境检测器
+        class MockEnvChecker {
+            async runAllChecks() {
+                // 模拟延迟
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                return {
+                    nodejs: { passed: true, current: 'v23.10.0', required: '>= 18.0.0' },
+                    postgresql: { passed: true, current: '16.8', required: '>= 14.0' },
+                    redis: { passed: false, current: '未安装', required: '>= 6.0', optional: true },
+                    ports: {
+                        '3000': { available: true, description: 'NestJS Backend' },
+                        '3031': { available: true, description: 'Frontend Web' },
+                        '6379': { available: false, description: 'Redis' }
+                    }
+                };
+            }
+        }
+
+        // 简化的安装管理器
+        class TestInstallManager {
+            constructor() {
+                this.envChecker = new MockEnvChecker();
+                this.init();
+            }
+
+            init() {
+                document.getElementById('recheck-btn').addEventListener('click', () => this.runEnvironmentCheck());
+            }
+
+            async runEnvironmentCheck() {
+                // 显示检测中的状态
+                const recheckBtn = document.getElementById('recheck-btn');
+                const originalText = recheckBtn.textContent;
+                recheckBtn.textContent = '检测中...';
+                recheckBtn.disabled = true;
+
+                // 重置所有检测项为"检测中"状态
+                this.resetCheckItems();
+
+                try {
+                    const results = await this.envChecker.runAllChecks();
+                    this.updateEnvironmentUI(results);
+                } catch (error) {
+                    console.error('环境检测失败:', error);
+                    alert('环境检测失败，请检查后端服务是否正常运行');
+                } finally {
+                    // 恢复按钮状态
+                    recheckBtn.textContent = originalText;
+                    recheckBtn.disabled = false;
+                }
+            }
+
+            resetCheckItems() {
+                const checkItems = ['check-nodejs', 'check-postgresql', 'check-redis', 'check-ports'];
+                checkItems.forEach(id => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        const statusElement = element.querySelector('.status');
+                        if (statusElement) {
+                            statusElement.className = 'status pending';
+                            statusElement.textContent = '检测中...';
+                        }
+                    }
+                });
+            }
+
+            updateEnvironmentUI(results) {
+                this.updateCheckItem('check-nodejs', results.nodejs);
+                this.updateCheckItem('check-postgresql', results.postgresql);
+                this.updateCheckItem('check-redis', results.redis, true);
+                this.updatePortCheck(results.ports);
+            }
+
+            updateCheckItem(elementId, result, isOptional = false) {
+                const element = document.getElementById(elementId);
+                const statusElement = element.querySelector('.status');
+                const currentElement = element.querySelector('.current');
+
+                statusElement.className = `status ${result.passed ? 'passed' : 'failed'}`;
+                statusElement.textContent = result.passed ? '通过' : (isOptional ? '未通过' : '未通过');
+
+                if (currentElement && result.current) {
+                    currentElement.textContent = `当前版本: ${result.current}`;
+                }
+            }
+
+            updatePortCheck(ports) {
+                const element = document.getElementById('check-ports');
+                const statusElement = element.querySelector('.status');
+                const currentElement = element.querySelector('.current');
+
+                const allAvailable = Object.values(ports).every(p => p.available);
+                statusElement.className = `status ${allAvailable ? 'passed' : 'failed'}`;
+                statusElement.textContent = allAvailable ? '通过' : '部分端口被占用';
+
+                const portList = Object.entries(ports)
+                    .map(([port, info]) => `${port}: ${info.available ? '可用' : '被占用'}`)
+                    .join(', ');
+                currentElement.textContent = portList;
+            }
+        }
+
+        // 启动测试
+        new TestInstallManager();
+    </script>
+</body>
+</html>

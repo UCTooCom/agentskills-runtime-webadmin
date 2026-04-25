@@ -1,0 +1,92 @@
+{
+  "name": "@opentiny/next-sdk",
+  "version": "0.3.1",
+  "type": "module",
+  "homepage": "https://docs.opentiny.design/next-sdk/guide/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:opentiny/next-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opentiny/next-sdk/issues"
+  },
+  "keywords": [
+    "next-sdk",
+    "opentiny",
+    "mcp",
+    "sdk",
+    "agent"
+  ],
+  "license": "MIT",
+  "author": "Chunhui Mo",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./core": {
+      "import": "./dist/core.js",
+      "types": "./dist/core.d.ts"
+    },
+    "./chat": {
+      "import": "./dist/chat.js",
+      "types": "./dist/chat.d.ts"
+    }
+  },
+  "description": "A frontend intelligent application development toolkit designed to simplify WebAgent integration and usage, supporting multiple programming languages and frontend frameworks to help developers rapidly implement intelligent features",
+  "scripts": {
+    "build:all": "pnpm build:cdn && pnpm build:cdn:dev && pnpm build",
+    "build": "vite build --config vite-build-tsc.ts",
+    "build:cdn": "vite build && pnpm build:webAgent && pnpm build:webMcp && pnpm build:mcpSdk && pnpm build:zod && pnpm build:webMcpFull",
+    "build:cdn:dev": "vite build --mode dev && pnpm build:webAgent:dev && pnpm build:webMcp:dev && pnpm build:mcpSdk:dev && pnpm build:zod:dev && pnpm build:webMcpFull:dev",
+    "build:webAgent": "vite build --config vite.config.webAgent.ts",
+    "build:webAgent:dev": "vite build --config vite.config.webAgent.ts --mode dev",
+    "build:webMcp": "vite build --config vite.config.webMcp.ts",
+    "build:webMcp:dev": "vite build --config vite.config.webMcp.ts --mode dev",
+    "build:mcpSdk": "vite build --config vite.config.mcpSdk.ts",
+    "build:mcpSdk:dev": "vite build --config vite.config.mcpSdk.ts --mode dev",
+    "build:zod": "vite build --config vite.config.zod.ts",
+    "build:zod:dev": "vite build --config vite.config.zod.ts --mode dev",
+    "build:webMcpFull": "vite build --config vite.config.webMcpFull.ts",
+    "build:webMcpFull:dev": "vite build --config vite.config.webMcpFull.ts --mode dev"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "~1.25.2",
+    "@opentiny/next": "^0.3.2",
+    "@ai-sdk/openai": "^3.0.0",
+    "@ai-sdk/deepseek": "1.0.30",
+    "@ai-sdk/provider": "^3.0.0",
+    "@ai-sdk/mcp": "^1.0.0",
+    "qrcode": "^1.5.4",
+    "zod": "^3.25.76",
+    "ajv": "^8.17.1",
+    "ai": "^6.0.0",
+    "@mcp-b/webmcp-polyfill": "^2.2.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7",
+    "vite-plugin-dts": "^3.9.1",
+    "@types/qrcode": "^1.5.5",
+    "@types/node": "^24.3.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "module": "dist/index.js",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "./core": {
+        "import": "./dist/core.js",
+        "types": "./dist/core.d.ts"
+      }
+    }
+  }
+}

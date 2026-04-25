@@ -1,0 +1,46 @@
+{
+  "name": "next-sdk",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OpenTiny NEXT MCP",
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm -F doc-ai dev",
+    "dev:ng": "pnpm -F doc-ai-angular dev",
+    "dev:react": "pnpm -F doc-ai-react dev",
+    "dev:wxt": "pnpm -F @opentiny/next-wxt dev",
+    "dev:wxt:inner": "pnpm -F @opentiny/next-wxt dev:inner",
+    "wiki": "pnpm -F next-docs dev",
+    "inspector": "npx @modelcontextprotocol/inspector",
+    "build": "pnpm -F @opentiny/next-sdk build:all",
+    "build:wxt": "pnpm -F @opentiny/next-wxt build",
+    "build:wxt:inner": "pnpm -F @opentiny/next-wxt build:inner",
+    "build:remoter": "pnpm -F @opentiny/next-remoter build && pnpm -F @opentiny/next-remoter build:runtime",
+    "build:site": "pnpm -F @opentiny/next-remoter build:site",
+    "dev:remoter": "pnpm -F @opentiny/next-remoter dev",
+    "dev:vue-playground": "pnpm -F vue-playground dev",
+    "dev:playground": "pnpm -F next-sdk-playground dev",
+    "build:playground": "pnpm -F next-sdk-playground build",
+    "preview:playground": "pnpm -F next-sdk-playground preview",
+    "pub:next-sdk": "pnpm -F @opentiny/next-sdk publish --no-git-checks",
+    "pub:remoter": "pnpm -F @opentiny/next-remoter publish --no-git-checks"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "@modelcontextprotocol/inspector": "^0.21.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "rollup": "4.43.0",
+      "@opentiny/vue": "^3.27.0",
+      "@opentiny/vue-theme": "^3.27.0"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=8"
+  }
+}

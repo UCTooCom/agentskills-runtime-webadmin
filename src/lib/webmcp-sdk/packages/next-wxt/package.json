@@ -1,0 +1,50 @@
+{
+  "name": "@opentiny/next-wxt",
+  "description": "Opentiny Next 框架的浏览器扩展插件",
+  "private": true,
+  "version": "0.0.6",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt prepare && wxt --mode open",
+    "dev:inner": "wxt prepare && wxt --mode inner",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build --mode open-prod && node scripts/fix-manifest-options.mjs",
+    "build:inner": "wxt build --mode inner-prod && node scripts/fix-manifest-options.mjs",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "vue-tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "@opentiny/vue": "catalog:",
+    "@opentiny/vue-icon": "catalog:",
+    "puppeteer-core": "catalog:",
+    "@built-in-ai/core": "catalog:",
+    "vant": "catalog:",
+    "vue": "catalog:",
+    "zod": "catalog:",
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "@babel/standalone": "catalog:",
+    "eval5": "catalog:",
+    "@opentiny/next-remoter": "workspace:*",
+    "@opentiny/next-sdk": "workspace:*",
+    "@opentiny/unplugin-tiny-vue": "catalog:",
+    "@vant/auto-import-resolver": "catalog:",
+    "@wxt-dev/auto-icons": "catalog:",
+    "@wxt-dev/module-vue": "catalog:",
+    "@wxt-dev/storage": "catalog:",
+    "chokidar": "catalog:",
+    "glob": "catalog:",
+    "typescript": "catalog:",
+    "unplugin-auto-import": "catalog:",
+    "unplugin-vue-components": "catalog:",
+    "vite": "7.2.4",
+    "vite-svg-loader": "catalog:",
+    "vue-tsc": "catalog:",
+    "webext-bridge": "catalog:",
+    "wxt": "catalog:"
+  }
+}

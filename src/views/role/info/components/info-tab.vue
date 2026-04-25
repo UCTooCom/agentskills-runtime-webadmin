@@ -1,0 +1,337 @@
+<script lang="ts" setup>
+import { registerPageTool } from '@opentiny/next-sdk'
+import type { RoleAddData } from './add-role.vue'
+import type { Permission } from '@/api/permission'
+import type { ITreeNodeData } from '@/router/guard/menu'
+import type { FilterType, InputFilterValue, Pager } from '@/types/global'
+import {
+  Modal,
+  Button as TinyButton,
+  Loading as TinyLoading,
+  TinyModal,
+  Pager as TinyPager,
+} from '@opentiny/vue'
+import { computed, inject, ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
+import { getAllMenu } from '@/api/menu'
+import { getAllPermission } from '@/api/permission'
+import { createRole, updateRole } from '@/api/role'
+import { useAxiosRepo } from '@pinia-orm/axios'
+import { uctoo_role } from '@/store/models/uctoo/uctoo_role'
+import useLoading from '@/hooks/loading'
+import { useResponsive } from '@/hooks/responsive'
+import { useDisclosure } from '@/hooks/useDisclosure'
+import { useI18nMenu } from '@/hooks/useI18nMenu'
+import { useMenuId } from '@/hooks/useMenuId'
+import constant from '@/router/constant'
+import { toRoutes } from '@/router/guard/menu'
+import { useTabStore } from '@/store'
+import { useMenuStore } from '@/store/modules/router'
+import { sleep } from '@/utils/base-utils'
+import { getIdByLabel } from '@/utils/tree'
+import addRole from './add-role.vue'
+import menuDrawer from './menu-drawer.vue'
+import roleTable from './role-table.vue'
+
+const { sm } = useResponsive()
+const { t } = useI18n()
+const tableData = ref<any[]>([])
+const menus = ref<ITreeNodeData[]>([])
+const { open, onOpen, onClose } = useDisclosure()
+const { open: addModalVisible, onOpen: onAdd, onClose: onAddHide } = useDisclosure()
+const { loading, setLoading } = useLoading()
+const i18MenuDatas = computed(() => useI18nMenu(menus.value, t))
+const selectedId = ref<number[]>([])
+const router = useRouter()
+const menuStore = useMenuStore()
+const tabStore = useTabStore()
+const roleId = ref(-1)
+const permissions = ref<Permission[]>([])
+const vLoading = TinyLoading.directive
+
+const { reloadMenu } = inject<{ reloadMenu: () => void }>('RELOAD')
+
+setLoading(true)
+getAllMenu()
+  .then((res) => {
+    menus.value = res.data
+  })
+  .finally(() => {
+    setLoading(false)
+  })
+getAllPermission().then((res) => {
+  // 处理新的API返回格式: { errno, errmsg, data: { items: [...] } }
+  const responseData = res.data
+  if (responseData.errno === '0' || responseData.errno === 0) {
+    permissions.value = responseData.data.items || []
+  } else {
+    permissions.value = []
+  }
+})
+const pagerConfigSm = {
+  component: TinyPager,
+  attrs: { currentPage: 1, pageSize: 10, pageSizes: [10, 20, 50, 100], total: 10, layout: 'total, prev, pager, next' },
+}
+const pagerConfigLg = {
+  component: TinyPager,
+  attrs: { currentPage: 1, pageSize: 10, pageSizes: [10, 20, 50, 100], total: 10, layout: 'sizes, total, prev, pager, next, jumper' },
+}
+const roleTableRef = ref()
+const menuDrawerRef = ref()
+const addRoleFormRef = ref()
+const allFilter = {
+  inputFilter: {
+    inputFilter: true,
+  },
+}
+const fetchOption = {
+  filter: true,
+  api: ({ page, filters }: { page: Pager, filters: FilterType }) => {
+    let str = ''
+    if (filters.name) {
+      const condition = (filters.name.value as InputFilterValue).relation
+      if (condition === 'contains') {
+        str += '%'
+      }
+      str += (filters.name.value as InputFilterValue).text
+      if (condition === 'startwith' || condition === 'contains') {
+        str += '%'
+      }
+    }
+    return new Promise((resolve) => {
+      // 使用 store 模型库方法
+      useAxiosRepo(uctoo_role).api().getUctooRoleList(page.currentPage, page.pageSize, str ? { name: str } : {}).then(
+        (res) => {
+          // 处理 pinia-orm/axios 的响应
+          const responseData = res.response?.data || res.data
+
+          // 后端返回格式: { currentPage, totalCount, totalPage, uctoo_roles: [...] }
+          const roles = responseData.uctoo_roles || []
+          const total = responseData.totalCount || 0
+
+          // 为每个角色添加缺失的字段
+          const processedRoles = roles.map((role: any) => ({
+            ...role,
+            permission: role.permission || [],
+            menus: role.menus || [],
+            permissionIds: [],
+          }))
+
+          // 提取权限ID
+          processedRoles.forEach((item: any) => {
+            if (item.permission && item.permission.length > 0) {
+              item.permissionIds = item.permission.map((p: any) => p.id)
+            }
+          })
+
+          tableData.value = processedRoles
+
+          resolve({
+            result: processedRoles,
+            page: {
+              total,
+            },
+          })
+        },
+      )
+    })
+  },
+}
+function onMenuDrawerClose() {
+  onClose()
+}
+function onMenuUpdate(menuTree: ITreeNodeData[], id: number, row) {
+  roleId.value = id
+  selectedId.value = useMenuId(row.menus)
+  onOpen()
+}
+async function flushRouter() {
+  router.clearRoutes()
+  constant.forEach(staticRoute => router.addRoute(staticRoute))
+  await menuStore.getMenuList()
+  const routes = toRoutes(menuStore.menuList)
+  routes.forEach((route) => {
+    router.addRoute('root', route)
+  })
+}
+function flushTabs() {
+  const routePaths = router.getRoutes().map(routeItem => routeItem.path)
+  const removeTabs = tabStore.data.filter(
+    ({ link }) => !routePaths.includes(link),
+  )
+  removeTabs.forEach(({ link }) => tabStore.delByLink(link))
+}
+function onConfirm(ids: number[]) {
+  updateRole({
+    id: roleId.value,
+    menuIds: ids,
+  })
+    .then(({ data }) => {
+      selectedId.value = ids
+      const itemIdx = tableData.value.findIndex(
+        item => item.id === roleId.value,
+      )
+      tableData.value.splice(itemIdx, 1, {
+        ...tableData.value[itemIdx],
+        menus: data.menus,
+      })
+      return flushRouter()
+    })
+    .catch((error) => {
+      if (error.response && error.response.data) {
+        const errorMessage = error.response.data.message || '未知错误'
+        TinyModal.message({
+          message: errorMessage,
+          status: 'error',
+        })
+      }
+    })
+    .then(() => {
+      roleTableRef.value.reload()
+      flushTabs()
+      reloadMenu()
+    })
+    .finally(() => {
+      open.value = false
+    })
+}
+function onAddRole(role: RoleAddData) {
+  createRole(role)
+    .then(({ data }) => {
+      Modal.message({
+        message: t('roleInfo.modal.add.success'),
+        status: 'success',
+      })
+      tableData.value.push({
+        id: data.id,
+        permission: data.permission,
+        menus: [],
+        name: data.name,
+      })
+      roleTableRef.value.reload()
+    })
+    .catch((error) => {
+      if (error.response && error.response.data) {
+        const errorMessage = error.response.data.message || '未知错误'
+        TinyModal.message({
+          message: errorMessage,
+          status: 'error',
+        })
+      }
+    })
+    .finally(() => {
+      onAddHide()
+    })
+}
+function onRoleUpdateSuccess() {
+  roleTableRef.value.reload()
+}
+function onRoleDelete() {
+  roleTableRef.value.reload()
+}
+
+let cleanupPageTool: () => void
+
+onMounted(async () => {
+  cleanupPageTool = registerPageTool({
+    handlers: {
+      'add-role': async ({ name, permissions }) => {
+        onAdd()
+        await sleep(1000)
+
+        addRoleFormRef.value.setRoleInfo({
+          name,
+          permissionIds: permissions,
+        })
+        await sleep(1000)
+
+        addRoleFormRef.value.onConfirm()
+        return { content: [{ type: 'text', text: `收到: ${name}` }] }
+      },
+      'bind-menu-for-role': async ({ role, menu }) => {
+        const { data } = await getAllRoleDetail()
+        const rowData = data.roleInfo.items.find(item => item.name === role)
+        if (!rowData) {
+          return { content: [{ type: 'text', text: `角色未找到: ${role}` }] }
+        }
+        roleTableRef.value.openMenuModal(rowData.menus, rowData.id, rowData)
+        await sleep(1000)
+
+        // 先从菜单名称获取菜单 ID，再勾选菜单
+        const menuId = getIdByLabel(i18MenuDatas.value, menu)
+        menuDrawerRef.value.treeRef.setChecked(menuId, true, false)
+        await sleep(1000)
+
+        menuDrawerRef.value.onConfirm()
+        return { content: [{ type: 'text', text: `收到: ${role}` }] }
+      },
+    },
+  })
+})
+
+onUnmounted(() => cleanupPageTool?.())
+</script>
+
+<template>
+  <div>
+    <div class="tiny-fullscreen-scroll">
+      <div class="tiny-full-screen-wrapper">
+        <div class="role-add-btn">
+          <TinyButton v-permission="'uctoo:role:add'" type="primary" round @click="onAdd">
+            {{ $t('roleInfo.modal.title.add') }}
+          </TinyButton>
+        </div>
+        <div class="table">
+          <role-table
+            :key="sm ? 'sm' : 'lg'"
+            ref="roleTableRef"
+            :table-data="tableData"
+            :fetch-option="fetchOption"
+            :pager-config="sm ? pagerConfigSm : pagerConfigLg"
+            :permissions="permissions"
+            :filter="allFilter"
+            @menu-update="onMenuUpdate"
+            @update-role-close="onRoleUpdateSuccess"
+            @role-delete="onRoleDelete"
+          />
+        </div>
+      </div>
+    </div>
+    <menu-drawer
+      v-if="open"
+      ref="menuDrawerRef"
+      v-loading="loading"
+      :visible="open"
+      :menus="i18MenuDatas"
+      :selected-id="selectedId"
+      @close="onMenuDrawerClose"
+      @confirm="onConfirm"
+    />
+    <add-role
+      ref="addRoleFormRef"
+      :visible="addModalVisible"
+      :permissions="permissions"
+      @hide="onAddHide"
+      @confirm="onAddRole"
+      @cancel="onAddHide"
+    />
+  </div>
+</template>
+
+<style scoped lang="less">
+#contain {
+  height: 100%;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.role-add-btn {
+  padding: 0 0 24px 0;
+}
+
+.table {
+  padding-bottom: 20px;
+  background-color: #fff;
+}
+</style>

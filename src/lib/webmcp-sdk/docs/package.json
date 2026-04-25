@@ -1,0 +1,10 @@
+{
+  "name": "next-docs",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build"
+  },
+  "devDependencies": {
+    "vitepress": "catalog:"
+  }
+}
