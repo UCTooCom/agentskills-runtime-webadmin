@@ -1,0 +1,14 @@
+{
+  "dbHost": "127.0.0.1",
+  "dbPort": "5432",
+  "dbName": "uctoo",
+  "dbUser": "postgres",
+  "stepfunApiKey": "",
+  "sophnetApiKey": "",
+  "dbPassword": "uctoo123",
+  "sslType": "development",
+  "otherApiKeys": "",
+  "adminEmail": "admin@uctoo.com",
+  "adminName": "patrick",
+  "adminPassword": "123456"
+}

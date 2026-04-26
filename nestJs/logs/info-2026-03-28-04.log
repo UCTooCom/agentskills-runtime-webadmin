@@ -1,0 +1,4 @@
+info: Checking translation changes {"context":"I18nService","timestamp":"2026-03-27T20:56:39.439Z"}
+info: Types generated in: D:\UCT\projects\miniapp\qintong\Delivery\uctoo-admin\apps\web-admin\uctoo-admin\nestJs\src\.generate\i18n.generated.ts.
+                Please also add it to ignore files of your linter and formatter to avoid linting and formatting it
+                 {"context":"I18nService","timestamp":"2026-03-27T20:56:40.611Z"}

@@ -1,0 +1,7 @@
+warn: Lock file exists, if you want init again, please remove FLAG:INSTALL in your redis {"timestamp":"2026-03-31T09:09:00.759Z"}
+warn: Lock file exists, if you want init again, please remove FLAG:INSTALL in your redis {"timestamp":"2026-03-31T09:19:06.129Z"}
+warn: Lock file exists, if you want init again, please remove FLAG:INSTALL in your redis {"timestamp":"2026-03-31T09:30:04.594Z"}
+error: 数据库连接测试失败 {"context":"SetupService","stack":[{"cmd":"PGPASSWORD=\"uctoo123\" psql -h 127.0.0.1 -p 5432 -U postgres -d uctoo -c \"SELECT 1\"","code":1,"killed":false,"signal":null,"stderr":"'PGPASSWORD' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���\r\n���������ļ���\r\n","stdout":""}],"timestamp":"2026-03-31T09:39:39.948Z"}
+error: 数据库连接测试失败 {"context":"SetupService","stack":[{"cmd":"PGPASSWORD=\"uctoo123\" psql -h 127.0.0.1 -p 5432 -U postgres -d uctoo -c \"SELECT 1\"","code":1,"killed":false,"signal":null,"stderr":"'PGPASSWORD' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���\r\n���������ļ���\r\n","stdout":""}],"timestamp":"2026-03-31T09:40:35.850Z"}
+warn: Lock file exists, if you want init again, please remove FLAG:INSTALL in your redis {"timestamp":"2026-03-31T09:45:40.733Z"}
+warn: Lock file exists, if you want init again, please remove FLAG:INSTALL in your redis {"timestamp":"2026-03-31T09:51:45.548Z"}

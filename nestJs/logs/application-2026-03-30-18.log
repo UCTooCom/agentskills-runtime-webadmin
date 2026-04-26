@@ -1,0 +1,5 @@
+warn: Lock file exists, if you want init again, please remove FLAG:INSTALL in your redis {"timestamp":"2026-03-30T10:24:25.772Z"}
+error: Node.js 未安装或不可用 {"context":"SetupService","stack":[null],"timestamp":"2026-03-30T10:25:26.181Z"}
+error: Node.js 未安装或不可用 {"context":"SetupService","stack":[null],"timestamp":"2026-03-30T10:39:03.539Z"}
+error: Node.js 未安装或不可用 {"context":"SetupService","stack":[null],"timestamp":"2026-03-30T10:39:33.776Z"}
+warn: Lock file exists, if you want init again, please remove FLAG:INSTALL in your redis {"timestamp":"2026-03-30T10:52:32.344Z"}

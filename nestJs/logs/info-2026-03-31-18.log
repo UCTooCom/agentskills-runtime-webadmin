@@ -1,0 +1,408 @@
+info: Starting Nest application... {"context":"NestFactory","timestamp":"2026-03-31T10:10:01.678Z"}
+info: DbModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:01.748Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:01.751Z"}
+info: RedisModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:01.753Z"}
+info: ConfigHostModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.058Z"}
+info: JwtModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.061Z"}
+info: LockerModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.062Z"}
+info: SetupModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.078Z"}
+info: MockModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.080Z"}
+info: ConfigModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.082Z"}
+info: ConfigModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.083Z"}
+info: JwtModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.085Z"}
+info: TypeOrmCoreModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.209Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.212Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.213Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.214Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.216Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.217Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.218Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.219Z"}
+info: I18nModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.254Z"}
+info: MenuModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.260Z"}
+info: ApplicationModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.261Z"}
+info: PermissionModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.264Z"}
+info: RoleModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.265Z"}
+info: I18Module dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.266Z"}
+info: AuthModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.269Z"}
+info: AppModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.270Z"}
+info: UserModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:10:02.271Z"}
+info: HealthCheckController {/api/healthCheck}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:10:02.357Z"}
+info: Mapped {/healthCheck, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.362Z"}
+info: UserController {/api/user}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:10:02.364Z"}
+info: Mapped {/api/user/reg, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.367Z"}
+info: Mapped {/api/user/info/:email?, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.369Z"}
+info: Mapped {/api/user/:email, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.371Z"}
+info: Mapped {/api/user/update, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.372Z"}
+info: Mapped {/api/user, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.373Z"}
+info: Mapped {/api/user/admin/updatePwd, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.375Z"}
+info: Mapped {/api/user/updatePwd, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.376Z"}
+info: Mapped {/api/user/batch, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.377Z"}
+info: PermissionController {/api/permission}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:10:02.379Z"}
+info: Mapped {/api/permission, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.384Z"}
+info: Mapped {/api/permission, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.386Z"}
+info: Mapped {/api/permission, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.387Z"}
+info: Mapped {/api/permission/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.388Z"}
+info: AuthController {/api/auth}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:10:02.389Z"}
+info: Mapped {/api/auth/token/refresh, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.390Z"}
+info: Mapped {/api/auth/login, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.391Z"}
+info: Mapped {/api/auth/logout, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.392Z"}
+info: Mapped {/api/auth/api-token, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.394Z"}
+info: Mapped {/api/auth/revoke-api-token, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.395Z"}
+info: RoleController {/api/role}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:10:02.399Z"}
+info: Mapped {/api/role, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.402Z"}
+info: Mapped {/api/role, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.404Z"}
+info: Mapped {/api/role/detail, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.405Z"}
+info: Mapped {/api/role, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.407Z"}
+info: Mapped {/api/role/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.408Z"}
+info: Mapped {/api/role/info/:id, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.411Z"}
+info: MenuController {/api/menu}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:10:02.415Z"}
+info: Mapped {/api/menu/role/:email, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.417Z"}
+info: Mapped {/api/menu, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.419Z"}
+info: Mapped {/api/menu, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.421Z"}
+info: Mapped {/api/menu, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.422Z"}
+info: Mapped {/api/menu, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.423Z"}
+info: ApplicationController {/api/application}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:10:02.424Z"}
+info: Mapped {/api/application, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.430Z"}
+info: SetupController {/api/setup}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:10:02.431Z"}
+info: Mapped {/api/setup/check-environment, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.433Z"}
+info: Mapped {/api/setup/save-config, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.434Z"}
+info: Mapped {/api/setup/load-config, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.436Z"}
+info: Mapped {/api/setup/test-config, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.437Z"}
+info: Mapped {/api/setup/service-status, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.439Z"}
+info: Mapped {/api/setup/logs, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.440Z"}
+info: Mapped {/api/setup/create-admin, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.445Z"}
+info: Mapped {/api/setup/start-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.446Z"}
+info: Mapped {/api/setup/stop-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.447Z"}
+info: Mapped {/api/setup/restart-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.448Z"}
+info: Mapped {/api/setup/check-runtime, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.449Z"}
+info: Mapped {/api/setup/install-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.450Z"}
+info: Mapped {/api/setup/read-runtime-env, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.452Z"}
+info: Mapped {/api/setup/save-runtime-env, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.454Z"}
+info: I18Controller {/api/i18}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:10:02.455Z"}
+info: Mapped {/api/i18, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.460Z"}
+info: Mapped {/api/i18/format, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.461Z"}
+info: Mapped {/api/i18, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.463Z"}
+info: Mapped {/api/i18/:id, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.464Z"}
+info: Mapped {/api/i18/:id, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.465Z"}
+info: Mapped {/api/i18/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.466Z"}
+info: Mapped {/api/i18/batch, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.468Z"}
+info: I18nLangController {/api/lang}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:10:02.469Z"}
+info: Mapped {/api/lang, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.471Z"}
+info: Mapped {/api/lang, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.476Z"}
+info: Mapped {/api/lang/:id, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.477Z"}
+info: Mapped {/api/lang/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.478Z"}
+info: MockController {/api/mock}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:10:02.479Z"}
+info: Mapped {/api/mock/*, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.481Z"}
+info: Mapped {/api/mock/*, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:10:02.482Z"}
+info: Checking translation changes {"context":"I18nService","timestamp":"2026-03-31T10:10:02.834Z"}
+info: No changes detected {"context":"I18nService","timestamp":"2026-03-31T10:10:02.862Z"}
+warn: Lock file exists, if you want init again, please remove FLAG:INSTALL in your redis {"timestamp":"2026-03-31T10:10:02.865Z"}
+info: Nest application successfully started {"context":"NestApplication","timestamp":"2026-03-31T10:10:02.869Z"}
+info: Starting Nest application... {"context":"NestFactory","timestamp":"2026-03-31T10:13:33.167Z"}
+info: DbModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.260Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.262Z"}
+info: RedisModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.264Z"}
+info: ConfigHostModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.543Z"}
+info: JwtModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.544Z"}
+info: LockerModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.545Z"}
+info: SetupModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.562Z"}
+info: MockModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.565Z"}
+info: ConfigModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.567Z"}
+info: ConfigModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.568Z"}
+info: JwtModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.570Z"}
+info: TypeOrmCoreModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.694Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.695Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.696Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.696Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.697Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.697Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.698Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.698Z"}
+info: I18nModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.748Z"}
+info: MenuModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.755Z"}
+info: ApplicationModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.756Z"}
+info: PermissionModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.760Z"}
+info: RoleModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.762Z"}
+info: I18Module dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.764Z"}
+info: AuthModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.765Z"}
+info: AppModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.767Z"}
+info: UserModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:13:33.768Z"}
+info: HealthCheckController {/api/healthCheck}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:13:33.874Z"}
+info: Mapped {/healthCheck, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.884Z"}
+info: UserController {/api/user}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:13:33.885Z"}
+info: Mapped {/api/user/reg, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.888Z"}
+info: Mapped {/api/user/info/:email?, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.890Z"}
+info: Mapped {/api/user/:email, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.893Z"}
+info: Mapped {/api/user/update, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.897Z"}
+info: Mapped {/api/user, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.899Z"}
+info: Mapped {/api/user/admin/updatePwd, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.901Z"}
+info: Mapped {/api/user/updatePwd, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.903Z"}
+info: Mapped {/api/user/batch, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.905Z"}
+info: PermissionController {/api/permission}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:13:33.906Z"}
+info: Mapped {/api/permission, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.908Z"}
+info: Mapped {/api/permission, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.912Z"}
+info: Mapped {/api/permission, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.914Z"}
+info: Mapped {/api/permission/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.916Z"}
+info: AuthController {/api/auth}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:13:33.917Z"}
+info: Mapped {/api/auth/token/refresh, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.919Z"}
+info: Mapped {/api/auth/login, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.921Z"}
+info: Mapped {/api/auth/logout, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.922Z"}
+info: Mapped {/api/auth/api-token, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.926Z"}
+info: Mapped {/api/auth/revoke-api-token, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.928Z"}
+info: RoleController {/api/role}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:13:33.930Z"}
+info: Mapped {/api/role, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.931Z"}
+info: Mapped {/api/role, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.933Z"}
+info: Mapped {/api/role/detail, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.934Z"}
+info: Mapped {/api/role, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.936Z"}
+info: Mapped {/api/role/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.937Z"}
+info: Mapped {/api/role/info/:id, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.942Z"}
+info: MenuController {/api/menu}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:13:33.943Z"}
+info: Mapped {/api/menu/role/:email, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.945Z"}
+info: Mapped {/api/menu, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.947Z"}
+info: Mapped {/api/menu, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.949Z"}
+info: Mapped {/api/menu, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.950Z"}
+info: Mapped {/api/menu, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.951Z"}
+info: ApplicationController {/api/application}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:13:33.952Z"}
+info: Mapped {/api/application, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.958Z"}
+info: SetupController {/api/setup}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:13:33.960Z"}
+info: Mapped {/api/setup/check-environment, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.962Z"}
+info: Mapped {/api/setup/save-config, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.965Z"}
+info: Mapped {/api/setup/load-config, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.967Z"}
+info: Mapped {/api/setup/test-config, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.972Z"}
+info: Mapped {/api/setup/service-status, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.974Z"}
+info: Mapped {/api/setup/logs, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.975Z"}
+info: Mapped {/api/setup/create-admin, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.976Z"}
+info: Mapped {/api/setup/start-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.978Z"}
+info: Mapped {/api/setup/stop-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.980Z"}
+info: Mapped {/api/setup/restart-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.981Z"}
+info: Mapped {/api/setup/check-runtime, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.983Z"}
+info: Mapped {/api/setup/install-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.988Z"}
+info: Mapped {/api/setup/read-runtime-env, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.989Z"}
+info: Mapped {/api/setup/save-runtime-env, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.990Z"}
+info: I18Controller {/api/i18}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:13:33.992Z"}
+info: Mapped {/api/i18, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.994Z"}
+info: Mapped {/api/i18/format, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:33.997Z"}
+info: Mapped {/api/i18, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:34.001Z"}
+info: Mapped {/api/i18/:id, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:34.003Z"}
+info: Mapped {/api/i18/:id, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:34.005Z"}
+info: Mapped {/api/i18/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:34.006Z"}
+info: Mapped {/api/i18/batch, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:34.008Z"}
+info: I18nLangController {/api/lang}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:13:34.009Z"}
+info: Mapped {/api/lang, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:34.010Z"}
+info: Mapped {/api/lang, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:34.012Z"}
+info: Mapped {/api/lang/:id, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:34.015Z"}
+info: Mapped {/api/lang/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:34.020Z"}
+info: MockController {/api/mock}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:13:34.021Z"}
+info: Mapped {/api/mock/*, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:34.022Z"}
+info: Mapped {/api/mock/*, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:13:34.024Z"}
+info: Checking translation changes {"context":"I18nService","timestamp":"2026-03-31T10:13:34.406Z"}
+info: No changes detected {"context":"I18nService","timestamp":"2026-03-31T10:13:34.433Z"}
+warn: Lock file exists, if you want init again, please remove FLAG:INSTALL in your redis {"timestamp":"2026-03-31T10:13:34.439Z"}
+info: Nest application successfully started {"context":"NestApplication","timestamp":"2026-03-31T10:13:34.444Z"}
+info: Starting Nest application... {"context":"NestFactory","timestamp":"2026-03-31T10:40:25.000Z"}
+info: DbModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.084Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.085Z"}
+info: RedisModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.087Z"}
+info: ConfigHostModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.445Z"}
+info: JwtModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.446Z"}
+info: LockerModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.447Z"}
+info: SetupModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.465Z"}
+info: MockModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.467Z"}
+info: ConfigModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.469Z"}
+info: ConfigModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.470Z"}
+info: JwtModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.472Z"}
+info: TypeOrmCoreModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.615Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.617Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.618Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.618Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.619Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.620Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.621Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.622Z"}
+info: I18nModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.667Z"}
+info: MenuModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.674Z"}
+info: ApplicationModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.675Z"}
+info: PermissionModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.679Z"}
+info: RoleModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.680Z"}
+info: I18Module dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.681Z"}
+info: AuthModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.682Z"}
+info: AppModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.683Z"}
+info: UserModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:40:25.684Z"}
+info: HealthCheckController {/api/healthCheck}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:40:25.779Z"}
+info: Mapped {/healthCheck, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.786Z"}
+info: UserController {/api/user}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:40:25.787Z"}
+info: Mapped {/api/user/reg, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.790Z"}
+info: Mapped {/api/user/info/:email?, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.792Z"}
+info: Mapped {/api/user/:email, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.796Z"}
+info: Mapped {/api/user/update, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.797Z"}
+info: Mapped {/api/user, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.800Z"}
+info: Mapped {/api/user/admin/updatePwd, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.801Z"}
+info: Mapped {/api/user/updatePwd, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.803Z"}
+info: Mapped {/api/user/batch, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.804Z"}
+info: PermissionController {/api/permission}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:40:25.805Z"}
+info: Mapped {/api/permission, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.807Z"}
+info: Mapped {/api/permission, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.808Z"}
+info: Mapped {/api/permission, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.810Z"}
+info: Mapped {/api/permission/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.811Z"}
+info: AuthController {/api/auth}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:40:25.812Z"}
+info: Mapped {/api/auth/token/refresh, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.813Z"}
+info: Mapped {/api/auth/login, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.814Z"}
+info: Mapped {/api/auth/logout, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.816Z"}
+info: Mapped {/api/auth/api-token, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.817Z"}
+info: Mapped {/api/auth/revoke-api-token, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.819Z"}
+info: RoleController {/api/role}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:40:25.820Z"}
+info: Mapped {/api/role, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.821Z"}
+info: Mapped {/api/role, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.822Z"}
+info: Mapped {/api/role/detail, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.823Z"}
+info: Mapped {/api/role, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.825Z"}
+info: Mapped {/api/role/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.826Z"}
+info: Mapped {/api/role/info/:id, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.828Z"}
+info: MenuController {/api/menu}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:40:25.829Z"}
+info: Mapped {/api/menu/role/:email, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.831Z"}
+info: Mapped {/api/menu, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.832Z"}
+info: Mapped {/api/menu, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.833Z"}
+info: Mapped {/api/menu, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.834Z"}
+info: Mapped {/api/menu, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.835Z"}
+info: ApplicationController {/api/application}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:40:25.836Z"}
+info: Mapped {/api/application, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.837Z"}
+info: SetupController {/api/setup}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:40:25.838Z"}
+info: Mapped {/api/setup/check-environment, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.840Z"}
+info: Mapped {/api/setup/save-config, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.842Z"}
+info: Mapped {/api/setup/load-config, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.843Z"}
+info: Mapped {/api/setup/test-config, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.845Z"}
+info: Mapped {/api/setup/service-status, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.846Z"}
+info: Mapped {/api/setup/logs, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.848Z"}
+info: Mapped {/api/setup/create-admin, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.849Z"}
+info: Mapped {/api/setup/start-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.851Z"}
+info: Mapped {/api/setup/stop-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.852Z"}
+info: Mapped {/api/setup/restart-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.853Z"}
+info: Mapped {/api/setup/check-runtime, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.855Z"}
+info: Mapped {/api/setup/install-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.856Z"}
+info: Mapped {/api/setup/read-runtime-env, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.857Z"}
+info: Mapped {/api/setup/save-runtime-env, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.859Z"}
+info: Mapped {/api/setup/generate-ssl, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.860Z"}
+info: Mapped {/api/setup/save-ssl, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.861Z"}
+info: I18Controller {/api/i18}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:40:25.863Z"}
+info: Mapped {/api/i18, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.864Z"}
+info: Mapped {/api/i18/format, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.866Z"}
+info: Mapped {/api/i18, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.867Z"}
+info: Mapped {/api/i18/:id, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.868Z"}
+info: Mapped {/api/i18/:id, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.869Z"}
+info: Mapped {/api/i18/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.870Z"}
+info: Mapped {/api/i18/batch, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.871Z"}
+info: I18nLangController {/api/lang}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:40:25.872Z"}
+info: Mapped {/api/lang, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.873Z"}
+info: Mapped {/api/lang, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.874Z"}
+info: Mapped {/api/lang/:id, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.876Z"}
+info: Mapped {/api/lang/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.877Z"}
+info: MockController {/api/mock}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:40:25.878Z"}
+info: Mapped {/api/mock/*, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.879Z"}
+info: Mapped {/api/mock/*, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:40:25.881Z"}
+info: Checking translation changes {"context":"I18nService","timestamp":"2026-03-31T10:40:26.287Z"}
+info: No changes detected {"context":"I18nService","timestamp":"2026-03-31T10:40:26.320Z"}
+warn: Lock file exists, if you want init again, please remove FLAG:INSTALL in your redis {"timestamp":"2026-03-31T10:40:26.324Z"}
+info: Nest application successfully started {"context":"NestApplication","timestamp":"2026-03-31T10:40:26.329Z"}
+info: Starting Nest application... {"context":"NestFactory","timestamp":"2026-03-31T10:42:00.684Z"}
+info: DbModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:00.766Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:00.767Z"}
+info: RedisModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:00.769Z"}
+info: ConfigHostModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.075Z"}
+info: JwtModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.077Z"}
+info: LockerModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.078Z"}
+info: SetupModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.097Z"}
+info: MockModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.099Z"}
+info: ConfigModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.101Z"}
+info: ConfigModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.103Z"}
+info: JwtModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.105Z"}
+info: TypeOrmCoreModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.227Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.229Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.230Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.231Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.232Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.232Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.233Z"}
+info: TypeOrmModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.234Z"}
+info: I18nModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.273Z"}
+info: MenuModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.280Z"}
+info: ApplicationModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.281Z"}
+info: PermissionModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.285Z"}
+info: RoleModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.286Z"}
+info: I18Module dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.287Z"}
+info: AuthModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.288Z"}
+info: AppModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.289Z"}
+info: UserModule dependencies initialized {"context":"InstanceLoader","timestamp":"2026-03-31T10:42:01.290Z"}
+info: HealthCheckController {/api/healthCheck}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:42:01.386Z"}
+info: Mapped {/healthCheck, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.390Z"}
+info: UserController {/api/user}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:42:01.391Z"}
+info: Mapped {/api/user/reg, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.393Z"}
+info: Mapped {/api/user/info/:email?, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.395Z"}
+info: Mapped {/api/user/:email, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.397Z"}
+info: Mapped {/api/user/update, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.398Z"}
+info: Mapped {/api/user, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.400Z"}
+info: Mapped {/api/user/admin/updatePwd, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.402Z"}
+info: Mapped {/api/user/updatePwd, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.403Z"}
+info: Mapped {/api/user/batch, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.405Z"}
+info: PermissionController {/api/permission}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:42:01.406Z"}
+info: Mapped {/api/permission, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.408Z"}
+info: Mapped {/api/permission, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.409Z"}
+info: Mapped {/api/permission, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.411Z"}
+info: Mapped {/api/permission/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.412Z"}
+info: AuthController {/api/auth}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:42:01.413Z"}
+info: Mapped {/api/auth/token/refresh, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.414Z"}
+info: Mapped {/api/auth/login, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.416Z"}
+info: Mapped {/api/auth/logout, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.417Z"}
+info: Mapped {/api/auth/api-token, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.420Z"}
+info: Mapped {/api/auth/revoke-api-token, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.421Z"}
+info: RoleController {/api/role}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:42:01.422Z"}
+info: Mapped {/api/role, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.424Z"}
+info: Mapped {/api/role, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.425Z"}
+info: Mapped {/api/role/detail, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.427Z"}
+info: Mapped {/api/role, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.428Z"}
+info: Mapped {/api/role/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.430Z"}
+info: Mapped {/api/role/info/:id, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.431Z"}
+info: MenuController {/api/menu}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:42:01.432Z"}
+info: Mapped {/api/menu/role/:email, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.434Z"}
+info: Mapped {/api/menu, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.435Z"}
+info: Mapped {/api/menu, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.436Z"}
+info: Mapped {/api/menu, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.437Z"}
+info: Mapped {/api/menu, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.439Z"}
+info: ApplicationController {/api/application}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:42:01.440Z"}
+info: Mapped {/api/application, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.441Z"}
+info: SetupController {/api/setup}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:42:01.442Z"}
+info: Mapped {/api/setup/check-environment, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.444Z"}
+info: Mapped {/api/setup/save-config, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.446Z"}
+info: Mapped {/api/setup/load-config, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.447Z"}
+info: Mapped {/api/setup/test-config, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.448Z"}
+info: Mapped {/api/setup/service-status, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.450Z"}
+info: Mapped {/api/setup/logs, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.451Z"}
+info: Mapped {/api/setup/create-admin, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.452Z"}
+info: Mapped {/api/setup/start-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.453Z"}
+info: Mapped {/api/setup/stop-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.455Z"}
+info: Mapped {/api/setup/restart-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.456Z"}
+info: Mapped {/api/setup/check-runtime, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.457Z"}
+info: Mapped {/api/setup/install-runtime, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.458Z"}
+info: Mapped {/api/setup/read-runtime-env, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.460Z"}
+info: Mapped {/api/setup/save-runtime-env, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.461Z"}
+info: Mapped {/api/setup/generate-ssl, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.462Z"}
+info: Mapped {/api/setup/save-ssl, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.463Z"}
+info: I18Controller {/api/i18}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:42:01.464Z"}
+info: Mapped {/api/i18, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.466Z"}
+info: Mapped {/api/i18/format, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.467Z"}
+info: Mapped {/api/i18, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.468Z"}
+info: Mapped {/api/i18/:id, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.469Z"}
+info: Mapped {/api/i18/:id, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.470Z"}
+info: Mapped {/api/i18/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.471Z"}
+info: Mapped {/api/i18/batch, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.472Z"}
+info: I18nLangController {/api/lang}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:42:01.473Z"}
+info: Mapped {/api/lang, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.474Z"}
+info: Mapped {/api/lang, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.476Z"}
+info: Mapped {/api/lang/:id, PATCH} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.477Z"}
+info: Mapped {/api/lang/:id, DELETE} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.478Z"}
+info: MockController {/api/mock}: {"context":"RoutesResolver","timestamp":"2026-03-31T10:42:01.479Z"}
+info: Mapped {/api/mock/*, GET} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.480Z"}
+info: Mapped {/api/mock/*, POST} route {"context":"RouterExplorer","timestamp":"2026-03-31T10:42:01.481Z"}
+info: Checking translation changes {"context":"I18nService","timestamp":"2026-03-31T10:42:01.891Z"}
+info: No changes detected {"context":"I18nService","timestamp":"2026-03-31T10:42:01.915Z"}
+warn: Lock file exists, if you want init again, please remove FLAG:INSTALL in your redis {"timestamp":"2026-03-31T10:42:01.920Z"}
+info: Nest application successfully started {"context":"NestApplication","timestamp":"2026-03-31T10:42:01.924Z"}
